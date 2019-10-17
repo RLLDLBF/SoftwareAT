@@ -1,0 +1,65 @@
+class BirthDate extends java.lang.Object
+{
+    private int day;
+    private int month;
+    private int year;
+
+    public void <init>(int, int, int)
+    {
+        BirthDate this;
+        int d, m, y, temp$0;
+
+        this := @this: BirthDate;
+
+        d := @parameter0: int;
+
+        m := @parameter1: int;
+
+        y := @parameter2: int;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        if m == 2 goto label1;
+
+        goto label2;
+
+     label1:
+        temp$0 = d - 1;
+
+        this.<BirthDate: int day> = temp$0;
+
+        goto label3;
+
+     label2:
+        this.<BirthDate: int day> = d;
+
+     label3:
+        this.<BirthDate: int month> = m;
+
+        this.<BirthDate: int year> = y;
+
+        return;
+    }
+
+    public void change_birth_date(int, int, int)
+    {
+        BirthDate this;
+        int d, m, y;
+
+        this := @this: BirthDate;
+
+        d := @parameter0: int;
+
+        m := @parameter1: int;
+
+        y := @parameter2: int;
+
+        this.<BirthDate: int day> = d;
+
+        this.<BirthDate: int month> = m;
+
+        this.<BirthDate: int year> = y;
+
+        return;
+    }
+}

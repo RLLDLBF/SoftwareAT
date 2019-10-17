@@ -1,0 +1,39 @@
+public class Soot2SSA extends java.lang.Object
+{
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int date, temp$0, date_1;
+        BirthDate BD, temp$1;
+
+        args := @parameter0: java.lang.String[];
+
+        date = 9;
+
+        temp$0 = 6324;
+
+        date_1 = temp$0;
+
+        temp$1 = new BirthDate;
+
+        specialinvoke temp$1.<BirthDate: void <init>(int,int,int)>(27, 4, 1997);
+
+        BD = temp$1;
+
+        virtualinvoke BD.<BirthDate: void change_birth_date(int,int,int)>(3, 11, 1997);
+
+        return;
+    }
+
+    public void <init>()
+    {
+        Soot2SSA this;
+
+        this := @this: Soot2SSA;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}
