@@ -17,31 +17,31 @@ public class HelloWorld {
     }
     
     public int Method3(int a, int b, int c){
-<span class="pc bpc" id="L20" title="4 of 6 branches missed.">    	if((a&gt;5&amp;&amp;b&lt;0)||c&gt;0) {</span>
+<span class="fc bfc" id="L20" title="All 6 branches covered.">    	if((a&gt;5&amp;&amp;b&lt;0)||c&gt;0) {</span>
 <span class="fc" id="L21">    		System.out.println(&quot;Condition 1&quot;);</span>
     	}
-<span class="nc bnc" id="L23" title="All 4 branches missed.">    	else if(a&lt;5 &amp;&amp; c&lt;-2 ) {</span>
-<span class="nc" id="L24">    		System.out.println(&quot;Condition 2&quot;);</span>
+<span class="fc bfc" id="L23" title="All 4 branches covered.">    	else if(a&lt;5 &amp;&amp; c&lt;-2 ) {</span>
+<span class="fc" id="L24">    		System.out.println(&quot;Condition 2&quot;);</span>
     	}
     	else {
-<span class="nc" id="L27">    		System.out.println(&quot;Condition 3&quot;);</span>
+<span class="fc" id="L27">    		System.out.println(&quot;Condition 3&quot;);</span>
     	}
 <span class="fc" id="L29">    	return 0;</span>
     }
     public int Method4(int a, int b, int c, int d, float e) {
-<span class="nc bnc" id="L32" title="All 2 branches missed.">    	if(a == 0) {</span>
-<span class="nc" id="L33">    		return 0;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">    	if(a == 0) {</span>
+<span class="fc" id="L33">    		return 0;</span>
     	}
-<span class="nc" id="L35">    	int x = 0;</span>
-<span class="nc bnc" id="L36" title="All 6 branches missed.">    	if((a == b) || ((c == d) &amp;&amp; (bug(a)))) {</span>
-<span class="nc" id="L37">    		 x = 1; </span>
+<span class="fc" id="L35">    	int x = 0;</span>
+<span class="fc bfc" id="L36" title="All 6 branches covered.">    	if((a == b) || ((c == d) &amp;&amp; (bug(a)))) {</span>
+<span class="fc" id="L37">    		 x = 1; </span>
     	}
-<span class="nc" id="L39">    	e = 1/x;</span>
-<span class="nc" id="L40">    	return 0;</span>
+<span class="fc" id="L39">    	e = 1/x;</span>
+<span class="fc" id="L40">    	return 0;</span>
     }
     public boolean bug(int a) {
-<span class="nc bnc" id="L43" title="All 2 branches missed.">    	if(a == 5) return true;</span>
-<span class="nc" id="L44">    	return false;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">    	if(a == 5) return true;</span>
+<span class="fc" id="L44">    	return false;</span>
     }
     
     
@@ -50,7 +50,16 @@ public class HelloWorld {
     	 * TODO: You need to complete this method to determine whether  a
     	 * triangle is formed or not when given the input edge a, b and c.
     	 */
-<span class="nc" id="L53">    	return true;</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">    	if (a+b&lt;=c){</span>
+<span class="fc" id="L54">    		return false;</span>
+		}
+<span class="fc bfc" id="L56" title="All 2 branches covered.">		else if (a+c&lt;=b){</span>
+<span class="fc" id="L57">    		return false;</span>
+		}
+<span class="fc bfc" id="L59" title="All 2 branches covered.">		else if (b+c&lt;=a){</span>
+<span class="fc" id="L60">    		return false;</span>
+		}
+<span class="fc" id="L62">    	return true;</span>
     }
     public boolean isBirthday(int year, int month, int day) {
     	/**
@@ -58,17 +67,82 @@ public class HelloWorld {
     	 * legitimate date of birth between 1990/01/01 and 2019/10/01 is 
     	 * formed or not when given the input year, month and day.
     	 */
-<span class="nc" id="L61">    	return true;</span>
+<span class="fc bfc" id="L70" title="All 4 branches covered.">    	if (year&lt;1990||year&gt;2019){return false;}</span>
+
+<span class="fc bfc" id="L72" title="All 4 branches covered.">    	else if(year==2019&amp;&amp;month&gt;10){return false;}</span>
+
+<span class="fc bfc" id="L74" title="All 6 branches covered.">    	else if(year==2019&amp;&amp;month==10&amp;&amp;day&gt;1){return false;}</span>
+
+<span class="fc bfc" id="L76" title="All 4 branches covered.">    	else if(month&lt;1||month&gt;12){return false;}</span>
+
+<span class="fc bfc" id="L78" title="All 2 branches covered.">    	else if(isLongerMonth(month)){</span>
+<span class="fc bfc" id="L79" title="All 4 branches covered.">			if(day&lt;1||day&gt;31){return false;}</span>
+		}
+
+<span class="fc bfc" id="L82" title="All 2 branches covered.">		else if(isShorterMonth(month)){</span>
+<span class="fc bfc" id="L83" title="All 4 branches covered.">    		if(day&lt;1||day&gt;30){return false;}</span>
+		}
+
+		else {
+<span class="fc bfc" id="L87" title="All 2 branches covered.">   			if(isRun(year)){</span>
+<span class="fc bfc" id="L88" title="All 4 branches covered.">    			if(day&lt;1||day&gt;29){return false;}</span>
+    		}
+    		else {
+<span class="fc bfc" id="L91" title="All 4 branches covered.">    			if(day&lt;1||day&gt;28){return false;}</span>
+    		}
+		}
+
+<span class="fc" id="L95">    	return true;</span>
     	
     }
-    public Double miniCalculator(double a, double b, char op) {
+
+    public boolean isRun(int year){
+<span class="fc bfc" id="L100" title="All 6 branches covered.">    	if((year%400==0||year%4==0&amp;&amp;year%100!=0)){return true;}</span>
+<span class="fc" id="L101">    	return false;</span>
+	}
+
+	public boolean isLongerMonth(int month){
+<span class="fc bfc" id="L105" title="All 14 branches covered.">    	if (month==1||month==3||month==5||month==7||month==8||month==10||month==12){</span>
+<span class="fc" id="L106">    		return true;</span>
+		}
+<span class="fc" id="L108">		return false;</span>
+	}
+
+	public boolean isShorterMonth(int month){
+<span class="fc bfc" id="L112" title="All 8 branches covered.">    	if(month==4||month==6||month==9||month==11){</span>
+<span class="fc" id="L113">    		return true;</span>
+		}
+<span class="fc" id="L115">		return false;</span>
+	}
+
+    public Double miniCalculator(double a, double b, char op) throws Exception{
     	/**
     	 * TODO: You need to complete this method to form a small calculator which 
     	 * can calculate the formula: &quot;a op b&quot;, the op here can be four basic  
     	 * operation: &quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;. 
     	 */
-<span class="nc" id="L70">    	double result = 0.0;</span>
-<span class="nc" id="L71">    	return result;</span>
+<span class="fc" id="L124">    	double result = 0.0;</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">    	if(op=='+'){</span>
+<span class="fc" id="L126">    		result = a+b;</span>
+		}
+<span class="fc bfc" id="L128" title="All 2 branches covered.">		else if(op=='-'){</span>
+<span class="fc" id="L129">    		result=a-b;</span>
+		}
+<span class="fc bfc" id="L131" title="All 2 branches covered.">		else if(op=='*'){</span>
+<span class="fc" id="L132">    		result=a*b;</span>
+		}
+<span class="fc bfc" id="L134" title="All 2 branches covered.">		else if(op=='/'){</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">    		if(b!=0){</span>
+<span class="fc" id="L136">				result=a/b;</span>
+			}else{
+<span class="fc" id="L138">				throw new Exception(&quot;b should not be zero!&quot;);</span>
+			}
+		}
+		else{
+<span class="fc" id="L142">    		throw new Exception(&quot;op here can only be four basic operation : \&quot;+\&quot;,\&quot;-\&quot;,\&quot;*\&quot;,\&quot;/\&quot;.&quot;);</span>
+		}
+
+<span class="fc" id="L145">    	return result;</span>
     }
     
 }
