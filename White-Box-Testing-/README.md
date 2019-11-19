@@ -28,3 +28,6 @@ junit、jacoco、maven
 ## 提交方式
 
 将github链接分享给助教，在README里截图最后的html报告
+
+## 实验结果
+![](https://github.com/Weizerojust/SoftwareAT/blob/master/White-Box-Testing-/IMG/white%20box%20testing%20result.png)
